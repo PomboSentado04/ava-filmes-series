@@ -3,15 +3,13 @@ using API.Models;
 
 public class AppDataContext : DbContext
 {
+    // Construtor necessário para injeção de dependência
+    public AppDataContext(DbContextOptions<AppDataContext> options) : base(options) { }
+
     // Tabelas do banco de dados
     public DbSet<Filme> Filmes { get; set; }
     public DbSet<Avaliacao> Avaliacoes { get; set; }
     public DbSet<Usuario> Usuarios { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseSqlite("Data Source=pedro.db");
-    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

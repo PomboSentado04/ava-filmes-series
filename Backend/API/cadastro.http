@@ -1,0 +1,145 @@
+### Configuração base (ajuste se necessário)
+@baseUrl = http://localhost:5046
+Content-Type: application/json
+
+### 1. Cadastrar Filmes
+POST {{baseUrl}}/filmes
+Content-Type: application/json
+
+{
+  "titulo": "Interestelar",
+  "diretor": "Christopher Nolan",
+  "ano": 2014
+}
+
+###
+POST {{baseUrl}}/filmes
+Content-Type: application/json
+
+{
+  "titulo": "O Poderoso Chefão",
+  "diretor": "Francis Ford Coppola",
+  "ano": 1972
+}
+
+###
+POST {{baseUrl}}/filmes
+Content-Type: application/json
+
+{
+  "titulo": "Parasita",
+  "diretor": "Bong Joon-ho",
+  "ano": 2019
+}
+
+### 2. Cadastrar Usuários
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+
+{
+  "nome": "João Silva",
+  "email": "joao@email.com"
+}
+
+###
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Maria Oliveira",
+  "email": "maria@email.com"
+}
+
+###
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Carlos Souza",
+  "email": "carlos@email.com"
+}
+
+###
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Ana Costa",
+  "email": "ana@email.com"
+}
+
+###
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Pedro Santos",
+  "email": "pedro@email.com"
+}
+
+### 3. Cadastrar Avaliações (1 por usuário)
+POST {{baseUrl}}/avaliacoes
+Content-Type: application/json
+
+{
+  "nota": 5,
+  "comentario": "Melhor filme de ficção científica da década!",
+  "filmeId": 1,
+  "usuarioId": 1
+}
+
+###
+POST {{baseUrl}}/avaliacoes
+Content-Type: application/json
+
+{
+  "nota": 4,
+  "comentario": "Clássico absoluto do cinema.",
+  "filmeId": 2,
+  "usuarioId": 2
+}
+
+###
+POST {{baseUrl}}/avaliacoes
+Content-Type: application/json
+
+{
+  "nota": 5,
+  "comentario": "Mudou minha visão sobre desigualdade social.",
+  "filmeId": 3,
+  "usuarioId": 3
+}
+
+###
+POST {{baseUrl}}/avaliacoes
+Content-Type: application/json
+
+{
+  "nota": 3,
+  "comentario": "Bom, mas superestimado.",
+  "filmeId": 1,
+  "usuarioId": 4
+}
+
+###
+POST {{baseUrl}}/avaliacoes
+Content-Type: application/json
+
+{
+  "nota": 5,
+  "comentario": "Obra-prima! Assisti 3 vezes no cinema.",
+  "filmeId": 2,
+  "usuarioId": 5
+}
+
+### 4. Consultar Dados
+GET {{baseUrl}}/filmes
+Accept: application/json
+
+###
+GET {{baseUrl}}/usuarios
+Accept: application/json
+
+###
+GET {{baseUrl}}/avaliacoes
+Accept: application/json
